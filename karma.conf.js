@@ -4,7 +4,6 @@ module.exports = (config) => {
     frameworks: ['jasmine'],
 
     plugins: [
-      // 'karma-browserify',
       'karma-jasmine',
       'karma-webpack',
       'karma-phantomjs-launcher',
