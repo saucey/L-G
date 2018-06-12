@@ -25,7 +25,8 @@ class MovieList extends Component {
   }
 
   titleToUrl(title) {
-    return '/movie/'+title.split(' ').join('-').toLowerCase();
+    let newTitle = title.replace(/[^A-Za-z0-9]/g, ' ');
+    return '/movie/'+newTitle.split(' ').join('-').toLowerCase();
   }
 
   render () {

@@ -8,7 +8,6 @@ const movies = (state = initialState, action) => {
   switch (action.type) {
     
     case "UPDATE_MOVIE_LIST":
-
     return action.movies;
 
       

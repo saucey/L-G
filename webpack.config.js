@@ -18,6 +18,10 @@ module.exports = {
       }
     },
     {
+      test: /\.(woff|woff2|ttf|svg|eot)/,
+      loader: 'url-loader?limit=100000',
+    },
+    {
       test: /\.(scss$|css$)/,
       use: [
       {

@@ -8,8 +8,6 @@ const movie = (state = initialState, action) => {
   switch (action.type) {
     
     case "SELECTED_MOVIE":
-    console.log(action, 'update the movie')
-
     return action.movie;
 
       
