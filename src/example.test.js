@@ -1,5 +1,5 @@
 
-import Reactssss from "react";
+import Reacts from "react";
 
 describe('StopWatchComponent', () => {
 
