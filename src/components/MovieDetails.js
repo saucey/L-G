@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Jumbotron, Button, Row, Col } from 'reactstrap';
+
 class MovieDetails extends Component {
 
   constructor(props) {
@@ -15,10 +17,24 @@ class MovieDetails extends Component {
     console.log(this.props, 'in details')
     return (
       <div>
-          <h1>{this.props.movie.title}</h1>
-          <h5>{this.props.movie.summary}</h5>
-          <p>{this.props.movie.description}</p>
-          <Link to="/" >Back To All Movies...</Link>     
+      <Row>
+          <Col md="3">
+            <img src={this.props.movie.imgLg}/>
+
+          </Col>
+          <Col md="9">
+            <Jumbotron>
+                <h1 className="display-3">{this.props.movie.title} </h1>
+                <h5 className="lead">{this.props.movie.summary}</h5>
+                <hr className="my-2" />
+                <p>{this.props.movie.description}</p>
+                <p className="lead">
+                  <Link className="btn btn-success" to="/" >Back To All Movies...</Link>     
+                </p>
+            </Jumbotron>    
+          
+          </Col>
+      </Row>
       </div>
     )
   }
