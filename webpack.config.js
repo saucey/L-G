@@ -1,4 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const apiMocker = require('webpack-api-mocker');
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
@@ -8,17 +10,17 @@ const htmlPlugin = new HtmlWebPackPlugin({
 module.exports = {
   module: {
     rules: [
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: "babel-loader"
+      }
+    },
+    {
+      test: /\.(scss$|css$)/,
+      use: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          {
             loader: "style-loader" // creates style nodes from JS strings
           },
           {
@@ -27,9 +29,16 @@ module.exports = {
           {
             loader: "sass-loader" // compiles Sass to CSS
           }
+          ]
+        }
         ]
-      }
-    ]
-  },
-  plugins: [htmlPlugin]
-};
+      },
+      devServer: {
+       before(app){
+        apiMocker(app, path.resolve('./api-mocker.movies.js'), {
+           changeHost: true,
+         })
+       }
+     },
+     plugins: [htmlPlugin]
+   };

@@ -38,10 +38,8 @@ module.exports = (config) => {
     
     autoWatch: true,
     browsers: ['Chrome'],
-    // browsers: ['Chrome'],
+    // browsers: ['PhantomJS'],
     webpackMiddleware: {
-      // webpack-dev-middleware configuration
-      // i. e.
       stats: 'errors-only'
     }
 
