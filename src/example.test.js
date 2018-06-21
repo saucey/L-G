@@ -1,5 +1,7 @@
 
 import Reacts from "react";
+import { shallow } from 'enzyme'
+import MovieDetails from './components/MovieDetails'
 
 describe('StopWatchComponent', () => {
 

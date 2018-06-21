@@ -1,3 +1,6 @@
+const webpackConfig = require('./webpack.config.js');
+
+
 module.exports = (config) => {
   config.set({
     // ... normal karma configuration
@@ -33,8 +36,7 @@ module.exports = (config) => {
       noInfo: true
     },
     
-
-    webpack: {},
+    webpack: webpackConfig,
     
     autoWatch: true,
     browsers: ['Chrome'],

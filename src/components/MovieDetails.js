@@ -14,7 +14,6 @@ class MovieDetails extends Component {
   }
 
   render () {
-    console.log(this.props, 'in details')
     return (
       <div>
       <Row>
